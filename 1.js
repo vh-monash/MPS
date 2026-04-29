@@ -1,9 +1,10 @@
 const moveProductTextUp = () => {
-    const products = document.querySelectorAll(".product.panel .info")
+    const products = document.querySelectorAll(".product.panel .info .name")
 
     products.forEach(product => {
         product.style.setProperty("position", "relative")
         product.style.setProperty("bottom", "40px")
+        product.style.setProperty("color", "white")
     })
 }
 
@@ -34,7 +35,7 @@ $(document).ready(function () {
     }
     else if (in_wide_format) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20WF.png?raw=true)")
-        if (url_splitted.at(-1).includes("1968")) {
+        if (url_splitted.at(-1).includes("1978")) {
             moveProductTextUp()
         }
     }
