@@ -13,20 +13,20 @@ $(document).ready(function () {
     let url = window.location.href;
     let url_splitted = url.split("/")
 
-    let in_print = url.includes("1969")
+    let in_print = url.includes("Print")
     let in_design = url.includes("Graphic-Design")
     let in_thesis = url.includes("Theses")
     let in_wide_format = url.includes("PostersBannersSigns")
 
     if (in_print) {
-        if (url_splitted.at(-1).includes("1969")) {
+        if (url_splitted.at(-1).includes("Print")) {
             moveProductTextUp()
         }
     }
     else if (in_design) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Design.png?raw=true)")
 
-        if (url_splitted.at(-1).includes("1973")) {
+        if (url_splitted.at(-1).includes("Graphic-Design")) {
             moveProductTextUp()
         }
     }
@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
     else if (in_wide_format) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20WF.png?raw=true)")
-        if (url_splitted.at(-1).includes("1978")) {
+        if (url_splitted.at(-1).includes("PostersBannersSigns")) {
             moveProductTextUp()
         }
     }
