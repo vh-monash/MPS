@@ -17,7 +17,7 @@ $(document).ready(function () {
     let in_design = url.includes("Graphic-Design")
     let in_thesis = url.includes("Theses")
     let in_wide_format = url.includes("PostersBannersSigns")
-    let in_first_folder = url_splitted[-2].includes("Grid")
+    let in_first_folder = url_splitted.at(-2).includes("Grid")
     
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
     if (in_first_folder) {
