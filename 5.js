@@ -19,6 +19,15 @@ $(document).ready(function () {
     let in_wide_format = url.includes("PostersBannersSigns")
     let in_first_folder = url_splitted.at(-2).includes("Grid")
     
+    let html_content_in_products = root.querySelectorAll(".products .panel.CONTENT");
+
+    html_content_in_products.forEach((item) => {
+        if (item.querySelector(".info .name").textContent.trim() === "NextLine") {
+            item.style.setProperty("visibility", "hidden");
+        }
+    })
+
+    root.querySelector("#main-footerText-inner").style.setProperty("margin-top", "10px");
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
     if (in_first_folder) {
         moveProductTextUp()
