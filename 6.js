@@ -17,26 +17,36 @@ $(document).ready(function () {
     let in_design = url.includes("Graphic-Design")
     let in_thesis = url.includes("Theses")
     let in_wide_format = url.includes("PostersBannersSigns")
-    let in_first_folder = url_splitted.at(-2).includes("Grid")
+    let in_presentation_folders = url.includes("Presentation-Folders")
+    let in_stamps = url.includes("Stamps")
+    let in_stationery = url.includes("Stationery")
+    let in_first_folder = url_splitted.at(-2)?.includes("Grid")
     
     let html_content_in_products = root.querySelectorAll(".products .panel.CONTENT");
 
     html_content_in_products.forEach((item) => {
-        if (item.querySelector(".info .name").textContent.trim() === "NextLine") {
+        if (item.querySelector(".info .name")?.textContent.trim() === "NextLine") {
             item.style.setProperty("visibility", "hidden");
         }
     })
 
-    root.querySelector("#main-footerText-inner").style.setProperty("margin-top", "10px");
+    root.querySelector("#main-footerText-inner")?.style.setProperty("margin-top", "10px");
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
     if (in_first_folder) {
         moveProductTextUp()
     }
 
     if (in_print) {
-        if (url_splitted.at(-1).includes("Print")) {
-            moveProductTextUp()
-        }
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Print.png?raw=true)")
+    }
+    else if (in_presentation_folders){
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Presentation%20folders.png?raw=true)")
+    }
+    else if (in_stamps){
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Stamps.png?raw=true)")
+    }
+    else if (in_stationery){
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Stationery.png?raw=true)")
     }
     else if (in_design) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Design.png?raw=true)")
