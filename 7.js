@@ -1,3 +1,13 @@
+const moveProductTextUp = () => {
+    const products = document.querySelectorAll(".product.panel .info .name")
+
+    products.forEach(product => {
+        product.style.setProperty("position", "relative")
+        product.style.setProperty("bottom", "40px")
+        product.style.setProperty("color", "white")
+    })
+}
+
 $(document).ready(function () {
     let root = document.querySelector(":root");
     let url = window.location.href;
@@ -10,6 +20,7 @@ $(document).ready(function () {
     let in_presentation_folders = url.includes("Presentation-Folders")
     let in_stamps = url.includes("Stamps")
     let in_stationery = url.includes("Stationery")
+    let  = url_splitted.at(-2)?.includes("Grid")
     let in_other = url.includes('Ad-Hoc-Product')
     
     let html_content_in_products = root.querySelectorAll(".products .panel.CONTENT");
@@ -22,6 +33,7 @@ $(document).ready(function () {
 
     root.querySelector("#main-footerText-inner")?.style.setProperty("margin-top", "10px");
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
+    moveProductTextUp()
 
     if (in_print) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Print.png?raw=true)")
