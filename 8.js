@@ -1,3 +1,45 @@
+const moveProductTextUp = () => {
+    const productsName = document.querySelectorAll(".product.panel:not(.CONTENT) .info .name")
+
+    productsName.forEach(product => {
+        product.style.setProperty("position", "relative"),
+        product.style.setProperty("bottom", "40px"),
+        product.style.setProperty("color", "white")
+    })
+
+    const dividerParents = document.querySelectorAll(".products .product.panel.CONTENT")
+
+    dividerParents.forEach(parent => {
+        parent.style.setProperty("position", "relative"),
+        parent.style.setProperty("max-height", "200px"),
+        parent.style.setProperty("max-width", "200px")
+    })
+
+    const dividers = document.querySelectorAll(".products .product.panel.CONTENT .info")
+
+    dividers.forEach(divider => {
+        divider.style.setProperty("position", "absolute"),
+        divider.style.setProperty("top", "50%"),
+        divider.style.setProperty("transform", "translateY(-50%)"),
+        divider.style.setProperty("padding-left", "10px"),
+        divider.style.setProperty("color", "white")
+    })
+
+    const dividersText = document.querySelectorAll(".products .product.panel.CONTENT .info .name")
+
+    dividersText.forEach(text => {
+        text.style.setProperty("text-align", "left")
+    })
+}
+
+const removePricing = () => {
+    const prices = document.querySelectorAll(".products .product.panel .info2 .price")
+
+    prices.forEach(price => {
+        price.style.setProperty("display", "none")
+    })
+}
+
 $(document).ready(function () {
     let root = document.querySelector(":root");
     let url = window.location.href;
@@ -10,6 +52,7 @@ $(document).ready(function () {
     let in_presentation_folders = url.includes("Presentation-Folders")
     let in_stamps = url.includes("Stamps")
     let in_stationery = url.includes("Stationery")
+    let  = url_splitted.at(-2)?.includes("Grid")
     let in_other = url.includes('Ad-Hoc-Product')
     
     let html_content_in_products = root.querySelectorAll(".products .panel.CONTENT");
@@ -22,6 +65,7 @@ $(document).ready(function () {
 
     root.querySelector("#main-footerText-inner")?.style.setProperty("margin-top", "10px");
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
+    moveProductTextUp()
 
     if (in_print) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Print.png?raw=true)")
@@ -34,6 +78,7 @@ $(document).ready(function () {
     }
     else if (in_stationery){
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Stationery.png?raw=true)")
+        removePricing()
     }
     else if (in_design) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Design.png?raw=true)")
