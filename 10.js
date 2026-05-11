@@ -62,8 +62,9 @@ $(document).ready(function () {
     let in_presentation_folders = url.includes("Presentation-Folders")
     let in_stamps = url.includes("Stamps")
     let in_stationery = url.includes("Stationery")
-    let  = url_splitted.at(-2)?.includes("Grid")
     let in_other = url.includes('Ad-Hoc-Product')
+    let in_screens = url.includes("Digital-Display-Screens")
+    let in_year_planners = url.includes("Year-Planners")
     
     let html_content_in_products = root.querySelectorAll(".products .panel.CONTENT");
 
@@ -100,6 +101,12 @@ $(document).ready(function () {
     }
     else if (in_wide_format) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20WF.png?raw=true)")
+    }
+    else if (in_screens) {
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Screens.png?raw=true)")
+    }
+    else if (in_year_planners) {
+        root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Year%20Planners.png?raw=true)")
     }
     else if (in_other) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Other.png?raw=true)")
