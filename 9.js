@@ -40,6 +40,16 @@ const removePricing = () => {
     })
 }
 
+const fitProductTexts = () => {
+    const texts = document.querySelectorAll(".products .product.panel .info .name a")
+
+    texts.forEach(text => {
+        if (text.offsetWidth > 175) {
+            text.style.setProperty("letter-spacing", "-0.5px")
+        }
+    })
+}
+
 $(document).ready(function () {
     let root = document.querySelector(":root");
     let url = window.location.href;
@@ -65,7 +75,9 @@ $(document).ready(function () {
 
     root.querySelector("#main-footerText-inner")?.style.setProperty("margin-top", "10px");
     root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blue.png?raw=true)")       
+
     moveProductTextUp()
+    fitProductTexts()
 
     if (in_print) {
         root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20Print.png?raw=true)")
