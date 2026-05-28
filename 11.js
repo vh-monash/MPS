@@ -1,9 +1,9 @@
 const moveProductTextUp = () => {
-    const productsName = document.querySelectorAll(".product.panel:not(.CONTENT) .info .name")
+const productsName = document.querySelectorAll(".product.panel:not(.CONTENT) .info .name")
 
     productsName.forEach(product => {
         product.style.setProperty("position", "relative"),
-        product.style.setProperty("bottom", "40px"),
+        product.style.setProperty("bottom", "45px"),
         product.style.setProperty("color", "white")
     })
 
@@ -11,10 +11,10 @@ const moveProductTextUp = () => {
 
     dividerParents.forEach(parent => {
         parent.style.setProperty("position", "relative"),
-        parent.style.setProperty("max-height", "200px"),
-        parent.style.setProperty("max-width", "200px")
+        parent.style.setProperty("max-height", "250px"),
+        parent.style.setProperty("max-width", "250px")
     })
-
+    
     const dividers = document.querySelectorAll(".products .product.panel.CONTENT .info")
 
     dividers.forEach(divider => {
