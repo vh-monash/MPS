@@ -44,7 +44,7 @@ const fitProductTexts = () => {
     const texts = document.querySelectorAll(".products .product.panel .info .name a")
 
     texts.forEach(text => {
-        if (text.offsetWidth > 175) {
+        if (text.offsetWidth > 230) {
             text.style.setProperty("letter-spacing", "-0.5px")
         }
     })
