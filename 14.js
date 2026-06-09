@@ -75,7 +75,7 @@ $(document).ready(function () {
     })
 
     root.querySelector("#main-footerText-inner")?.style.setProperty("margin-top", "10px");
-    root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blueberry.png?raw=true)")       
+    // root.style.setProperty("--bg", "url(https://github.com/vh-monash/MPS/blob/main/images/Banner%20-%20From%20Pixels%20to%20Print%20blueberry.png?raw=true)")       
 
     moveProductTextUp()
     fitProductTexts()
